@@ -8,8 +8,8 @@
             
             <div class="card-header">
                 <div class="btn-group">
-                <button style="margin-right: 15px"> <a href="{{url("/")}}">Voltar</a></button>
-                <button style="margin-right: 15px"> <a href="{{url("/usuarios/new")}}">Novo Usuário</a></button>
+                <a href="{{url("/")}}" style="margin-right: 15px">Voltar</a>
+                <a href="{{url("/usuarios/new")}}" style="margin-right: 15px">Novo Usuário</a>
                 <form action = "{{ route('usuarios.search') }}" method="post">
                       @csrf
                       <input type="text" name="search" placeholder="filtrar:">
@@ -25,18 +25,18 @@
                         </div>
                     @endif
 
-                    <h1>Lista dos usuários</h1>
+                    <h1>Lista dos Associados</h1>
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
+                                <th scope="col">Matricula</th>
                                 <th scope="col">Nome</th>
                                 <th scope="col">Email</th>
                                 <th scope="col">Ações</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($usuarios as $usuario)
+                          @foreach ($usuarios as $usuario)
                           <tr>
                             <th scope="row">{{$usuario->id}}</th>
                             <td>{{$usuario->name}}</td>
